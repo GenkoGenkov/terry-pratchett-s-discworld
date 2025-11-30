@@ -1,12 +1,12 @@
 {
     "7b9a2c4f-1d5e-4b6c-8a3d-2f1e0g3h4i5j": {
         "_id": "7b9a2c4f-1d5e-4b6c-8a3d-2f1e0g3h4i5j",
-        "title": "Elden Ring",
-        "genre": "Action RPG",
+        "title": "The Colour of Magic",
+        "genre": "Fantasy",
         "players": 105000,
-        "date": "2022-02-25",
+        "date": "1983-11-24",
         "imageUrl": "/images/The Colour of Magic.png",
-        "summary": "A monumental fantasy action RPG developed by FromSoftware and Bandai Namco. Set in the Lands Between, players embark on an epic quest to become the Elden Lord, exploring a vast open world designed by Hidetaka Miyazaki, with worldbuilding contributed by fantasy author George R. R. Martin.",
+        "summary": "The story takes place on the Discworld, a planet-sized flat disc carried through space on the backs of four gargantuan elephants – Berilia, Tubul, Great T'Phon and Jerakeen – who themselves stand on the shell of Great A'Tuin, a gigantic star turtle. The surface of the disc contains oceans and continents, and with them, civilisations, cities, forests and mountains.",
         "_createdOn": 1645708800000
     }
 }
