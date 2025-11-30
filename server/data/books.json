@@ -1,0 +1,12 @@
+{
+    "7b9a2c4f-1d5e-4b6c-8a3d-2f1e0g3h4i5j": {
+        "_id": "7b9a2c4f-1d5e-4b6c-8a3d-2f1e0g3h4i5j",
+        "title": "Elden Ring",
+        "genre": "Action RPG",
+        "players": 105000,
+        "date": "2022-02-25",
+        "imageUrl": "/images/The Colour of Magic.png",
+        "summary": "A monumental fantasy action RPG developed by FromSoftware and Bandai Namco. Set in the Lands Between, players embark on an epic quest to become the Elden Lord, exploring a vast open world designed by Hidetaka Miyazaki, with worldbuilding contributed by fantasy author George R. R. Martin.",
+        "_createdOn": 1645708800000
+    }
+}
