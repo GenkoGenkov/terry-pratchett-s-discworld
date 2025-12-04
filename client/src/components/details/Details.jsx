@@ -52,8 +52,18 @@ export default function Details() {
                         </p>
 
                         <p className="data-row">
-                            <span className="label">Active Players:</span>
-                            <span className="value">{book.players}</span>
+                            <span className="label">Subseries:</span>
+                            <span className="value">{book.subseries}</span>
+                        </p>
+
+                        <p className="data-row">
+                            <span className="label">Characters:</span>
+                            <span className="value">{book.characters}</span>
+                        </p>
+
+                        <p className="data-row">
+                            <span className="label">Locations:</span>
+                            <span className="value">{book.locations}</span>
                         </p>
 
                         <p className="data-row">

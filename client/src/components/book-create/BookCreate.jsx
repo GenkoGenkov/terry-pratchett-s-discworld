@@ -10,7 +10,6 @@ export default function BookCreate() {
 
         const data = Object.fromEntries(formData);
 
-        data.players = Number(data.players);
         data._createdOn = Date.now();
 
         const response = await fetch('http://localhost:3030/jsonstore/books', {
@@ -43,8 +42,18 @@ export default function BookCreate() {
                     </div>
 
                     <div className="form-group-half">
-                        <label htmlFor="activePlayers">Active Players:</label>
-                        <input type="number" id="activePlayers" name="players" min="0" placeholder="0" />
+                        <label htmlFor="subseries">Subseries:</label>
+                        <input type="text" id="subseries" name="subseries" placeholder="Enter book subseries..." />
+                    </div>
+
+                    <div className="form-group-half">
+                        <label htmlFor="characters">Characters:</label>
+                        <input type="text" id="characters" name="characters" placeholder="Enter book characters..." />
+                    </div>
+
+                    <div className="form-group-half">
+                        <label htmlFor="locations">Locations:</label>
+                        <input type="text" id="locations" name="locations" placeholder="Enter book locations..." />
                     </div>
 
                     <div className="form-group-half">
