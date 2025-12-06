@@ -6,6 +6,8 @@ import Home from "./components/home/Home"
 import Catalog from "./components/catalog/Catalog"
 import Details from "./components/details/Details"
 import BookCreate from "./components/book-create/BookCreate"
+import Register from "./components/register/Register"
+
 
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
             <Route path="/books" element={<Catalog/>} />
             <Route path="/books/:bookId/details" element={<Details />} />
             <Route path="/books/create" element={<BookCreate />} />
+            <Route path="/register" element={<Register />} />
         </Routes>
 
      <Footer/>
