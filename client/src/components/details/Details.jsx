@@ -77,11 +77,9 @@ export default function Details() {
                     </div>
                 </div>
 
-        
-         {/* <!-- Edit/Delete buttons ( Only for creator of this book )  --> */}
+    
         <div className="buttons">
-            <Link to="#" className="button">Edit</Link>
-            {/* <Link to={`/books/${bookId}/delete`} className="button">Delete</Link> */}
+            <Link to={`/books/${bookId}/edit`} className="button">Edit</Link>
             <button className="button" onClick={deleteBookHandler}>Delete</button>
         </div>
         
@@ -95,8 +93,7 @@ export default function Details() {
                     <p>Content: Truly feels like a next-gen evolution of the Souls formula!</p>
                 </li>
             </ul>
-              {/* <!-- Display paragraph: If there are no books in the database -->
-                    <!-- <p className="no-comment">No comments.</p> --> */}
+               <p className="no-comment">No comments.</p>
         </div>
 
     </div>

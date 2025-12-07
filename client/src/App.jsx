@@ -10,6 +10,7 @@ import BookCreate from "./components/book-create/BookCreate"
 import Register from "./components/register/Register"
 import Login from "./components/login/Login"
 import Logout from "./components/logout/Logout"
+import Edit from "./components/edit/Edit"
 
 
 
@@ -54,6 +55,7 @@ function App() {
             <Route path="/register" element={<Register onRegister={registerHandler} />} />
             <Route path="/login" element={<Login onLogin={loginHandler} />} />
             <Route path="/logout" element={<Logout onLogout={logoutHandler} />} />
+            <Route path="/books/:bookId/edit" element={<Edit />} />
         </Routes>
 
      <Footer/>
