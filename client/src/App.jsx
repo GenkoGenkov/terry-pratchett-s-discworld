@@ -8,13 +8,14 @@ import Catalog from "./components/catalog/Catalog"
 import Details from "./components/details/Details"
 import BookCreate from "./components/book-create/BookCreate"
 import Register from "./components/register/Register"
+import Login from "./components/login/Login"
 
 
 
 function App() {
     const[user, setUser] = useState(null);
 
-    const registerHandler = (email) => {
+    const authHandler = (email) => {
       setUser({
         email,
       });
@@ -29,7 +30,8 @@ function App() {
             <Route path="/books" element={<Catalog/>} />
             <Route path="/books/:bookId/details" element={<Details />} />
             <Route path="/books/create" element={<BookCreate />} />
-            <Route path="/register" element={<Register onRegister={registerHandler} />} />
+            <Route path="/register" element={<Register onRegister={authHandler} />} />
+            <Route path="/login" element={<Login onLogin={authHandler} />} />
         </Routes>
 
      <Footer/>
