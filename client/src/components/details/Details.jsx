@@ -1,19 +1,24 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router";
+import DetailsComments from "./details-comments/DetailsComments";
+import CreateComment from "./create-comment/CreateComment";
+
 
 const baseUrl = `http://localhost:3030/jsonstore/books`;
 
-export default function Details() {
-
+export default function Details({
+    user,
+}) {
     const navigate = useNavigate();
-    const { bookId  } = useParams();
-    const[book, setBook] = useState({});
+    const { bookId } = useParams();
+    const [book, setBoook] = useState({});
+    const [refresh, setRefresh] = useState(false);
     
 
     useEffect(() => {
         fetch(`${baseUrl}/${bookId}`)
             .then(response => response.json())
-            .then(result => setBook(result))
+            .then(result => setBoook(result))
             .catch(err => alert(err.message));
     }, [bookId]);
 
@@ -34,6 +39,10 @@ export default function Details() {
             alert('Unable to delete book: ', err.message);
         }
     };
+
+    const refreshHandler = () => {
+        setRefresh(state => !state);
+    }
 
     return(
 <section id="book-details">
@@ -79,32 +88,14 @@ export default function Details() {
 
     
         <div className="buttons">
-            <Link to={`/books/${bookId}/edit`} className="button">Edit</Link>
-            <button className="button" onClick={deleteBookHandler}>Delete</button>
-        </div>
-        
-        <div className="details-comments">
-            <h2>Comments:</h2>
-            <ul>
-                <li className="comment">
-                    <p>Content: A masterpiece of world design, though the boss fights are brutal.</p>
-                </li>
-                <li className="comment">
-                    <p>Content: Truly feels like a next-gen evolution of the Souls formula!</p>
-                </li>
-            </ul>
-               <p className="no-comment">No comments.</p>
-        </div>
+                    <Link to={`/books/${bookId}/edit`} className="button">Edit</Link>
+                    <button className="button" onClick={deleteBookHandler}>Delete</button>
+                </div>
 
-    </div>
- {/* <!-- Add Comment ( Only for logged-in users, which is not creators of the current book ) --> */}
-    <article className="create-comment">
-        <label>Add new comment:</label>
-        <form className="form">
-            <textarea name="comment" placeholder="Comment......"></textarea>
-            <input className="btn submit" type="submit" value="Add Comment"/>
-        </form>
-    </article>
+                <DetailsComments refresh={refresh} />
+            </div>
+
+            {user && <CreateComment user={user} onCreate={refreshHandler} />}
 </section>
     );
 }

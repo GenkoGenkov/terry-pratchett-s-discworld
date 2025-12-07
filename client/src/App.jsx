@@ -50,7 +50,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="/books" element={<Catalog/>} />
-            <Route path="/books/:bookId/details" element={<Details />} />
+            <Route path="/books/:bookId/details" element={<Details user={user} />} />
             <Route path="/books/create" element={<BookCreate />} />
             <Route path="/register" element={<Register onRegister={registerHandler} />} />
             <Route path="/login" element={<Login onLogin={loginHandler} />} />
