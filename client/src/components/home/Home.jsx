@@ -22,9 +22,7 @@ export default function Home() {
     return (
         <section id="welcome-world">
             <div className="welcome-message">
-                <h2>ALL new books are</h2>
-                <h3>Only in </h3>
-                <img id="logo-left" src="./images/logo.png" alt="logo" />
+                
             </div>
 
             <div id="home-page">
