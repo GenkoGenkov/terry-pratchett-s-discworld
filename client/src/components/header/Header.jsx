@@ -6,7 +6,7 @@ export default function Header(
     return(
         <header>
         <nav>
-            <Link className="home" to="/"> <img src="./images/logo.png" alt="logo"/> </Link>
+            <Link className="home" to="/"> <img src="./images/logo.jpg" alt="logo"/> </Link>
             <Link to="/books">Catalog</Link>
 
             <div id="user">
