@@ -6,25 +6,31 @@ import Footer from "./components/footer/Footer"
 import Home from "./components/home/Home"
 import Catalog from "./components/catalog/Catalog"
 import Details from "./components/details/Details"
-import BookCreate from "./components/book-create/BookCreate"
 import Register from "./components/register/Register"
 import Login from "./components/login/Login"
 import Logout from "./components/logout/Logout"
 import Edit from "./components/edit/Edit"
-
+import BookCreate from "./components/book-create/BookCreate"
 
 
 function App() {
+    const [registerdUsers, setRegisteredUsers] = useState([]);
     const [user, setUser] = useState(null);
 
     const registerHandler = (email, password) => {
+        if (registerdUsers.some(user => user.email === email)) {
+            throw new Error('Email is taken!');
+        }
 
         const newUser = { email, password };
+
+        setRegisteredUsers(state => [...state, newUser]);
 
         setUser(newUser);
     };
 
     const loginHandler = (email, password) => {
+        const user = registerdUsers.find(u => u.email === email && u.password === password);
         if (!user) {
             throw new Error('Invalid email or password')
         }
@@ -35,6 +41,7 @@ function App() {
     const logoutHandler = () => {
         setUser(null);
     };
+
 
     return (
     <>
