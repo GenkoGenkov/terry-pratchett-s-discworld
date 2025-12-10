@@ -15,23 +15,16 @@ import Edit from "./components/edit/Edit"
 
 
 function App() {
-    const [registerdUsers, setRegisteredUsers] = useState([]);
     const [user, setUser] = useState(null);
 
     const registerHandler = (email, password) => {
-        if (registerdUsers.some(user => user.email === email)) {
-            throw new Error('Email is not avaliable!');
-        }
 
         const newUser = { email, password };
-
-        setRegisteredUsers(state => [...state, newUser]);
 
         setUser(newUser);
     };
 
     const loginHandler = (email, password) => {
-        const user = registerdUsers.find(u => u.email === email && u.password === password);
         if (!user) {
             throw new Error('Invalid email or password')
         }
